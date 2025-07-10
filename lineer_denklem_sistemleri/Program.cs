@@ -22,12 +22,15 @@ namespace lineer_denklem_sistemleri
             var ratio1 = A[1, 0] / pv1;
             var ratio2 = A[2, 0] / pv1;
 
+            for (int i = 0; i < 4; i++) { 
             for (int i = 0; i < 4; i++)
             {
                 A[1, i] -= A[0, i] * ratio1;
                 A[2, i] -= A[0, i] * ratio2;
 
             }
+
+            Console.WriteLine("ok");
 
             #endregion
 
@@ -67,7 +70,7 @@ namespace lineer_denklem_sistemleri
                 A[0, i] -= A[0, i] / 2;
                 A[1, i] = A[1, i] - (A[0, i] * 4);
                 A[2, i] = A[2, i] + (A[0, i] * 2);
-            }
+        }
 
             var pv2 = A[1, 1];
             for (int i = 0; i < 4; i++)
@@ -91,8 +94,8 @@ namespace lineer_denklem_sistemleri
             double z = A[2, 3];
             Console.WriteLine($"z: {z}");
 
-        }
     }
+}
 
     internal class LU_Decomposition
     {
